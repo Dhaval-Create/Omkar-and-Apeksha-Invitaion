@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation - Omkar & Apeksha</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-red: #800020;
+            --deep-maroon: #4A000B;
+            --accent-gold: #D4AF37;
+            --light-gold: #F3E5AB;
+            --bg-cream: #FAF5EF;
+            --text-dark: #2B2B2B;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-cream);
+            background-image: radial-gradient(var(--light-gold) 0.75px, transparent 0.75px);
+            background-size: 24px 24px;
+            color: var(--text-dark);
+            text-align: center;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Floating Marigold Petals Animation */
+        .petal {
+            position: fixed;
+            top: -10%;
+            background-color: #FF9933;
+            border-radius: 15px 0 15px 0;
+            opacity: 0.7;
+            pointer-events: none;
+            z-index: 10;
+            animation: fall 10s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0vh) rotate(0deg);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(105vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Toran / Floral Garland Frame Header */
+        .garland-top {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            padding: 20px 20px 10px;
+        }
+
+        .ganesha-wrapper {
+            margin: 10px auto;
+            width: 90px;
+            height: 90px;
+        }
+
+        .shlok {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+            font-size: 1.1rem;
+            color: var(--primary-red);
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        .sub-header {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            color: #777;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        /* Hero Invitation Card */
+        .hero {
+            background: var(--white);
+            border: 3px double var(--accent-gold);
+            border-radius: 16px;
+            padding: 40px 20px;
+            margin: 20px 0;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
+            border: 1px dashed var(--accent-gold);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .corner-mandala {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            fill: var(--accent-gold);
+            opacity: 0.6;
+        }
+
+        .top-left { top: 15px; left: 15px; }
+        .top-right { top: 15px; right: 15px; transform: rotate(90deg); }
+        .bottom-left { bottom: 15px; left: 15px; transform: rotate(270deg); }
+        .bottom-right { bottom: 15px; right: 15px; transform: rotate(180deg); }
+
+        h1.couple-names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.8rem;
+            color: var(--primary-red);
+            margin: 15px 0;
+            line-height: 1.2;
+        }
+
+        .ampersand {
+            color: var(--accent-gold);
+            font-size: 2.5rem;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .family-details {
+            margin: 25px 0;
+            font-size: 0.95rem;
+            color: #444;
+        }
+
+        .family-details p {
+            margin: 6px 0;
+        }
+
+        .wedding-date-banner {
+            background: linear-gradient(135deg, var(--primary-red), var(--deep-maroon));
+            color: var(--light-gold);
+            padding: 14px 28px;
+            border-radius: 30px;
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin: 15px 0;
+            border: 1px solid var(--accent-gold);
+            box-shadow: 0 4px 15px rgba(128, 0, 32, 0.2);
+        }
+
+        /* Timeline Section */
+        .events-section {
+            margin: 40px 0;
+        }
+
+        .section-title {
+            font-family: 'Cinzel', serif;
+            color: var(--primary-red);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60%;
+            height: 2px;
+            background: var(--accent-gold);
+            display: block;
+            margin: 8px auto 0;
+        }
+
+        .event-card {
+            background: var(--white);
+            border-left: 5px solid var(--accent-gold);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 12px 12px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .event-icon-wrapper {
+            width: 50px;
+            height: 50px;
+            flex-shrink: 0;
+            fill: var(--primary-red);
+        }
+
+        .event-details {
+            flex-grow: 1;
+        }
+
+        .event-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            color: var(--primary-red);
+            font-weight: 700;
+        }
+
+        .event-time {
+            font-size: 0.95rem;
+            color: #333;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* Venue Card */
+        .venue-card {
+            background: var(--white);
+            border: 1px solid #E2D7C5;
+            border-radius: 12px;
+            padding: 30px 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            position: relative;
+        }
+
+        .venue-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            color: var(--primary-red);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .venue-address {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 22px;
+        }
+
+        .btn-map {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--accent-gold);
+            color: var(--text-dark);
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-map:hover {
+            background-color: var(--primary-red);
+            color: var(--white);
+        }
+
+        /* Music Floating Toggle Button */
+        .music-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-red);
+            color: var(--light-gold);
+            border: 2px solid var(--accent-gold);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 100;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 30px 20px;
+            background-color: var(--deep-maroon);
+            color: var(--light-gold);
+            border-radius: 12px 12px 0 0;
+        }
+
+        .invitation-by {
+            font-family: 'Cinzel', serif;
+            font-size: 1.05rem;
+            letter-spacing: 1px;
+        }
+
+        /* Mobile responsiveness adjustments */
+        @media (max-width: 600px) {
+            h1.couple-names { font-size: 2.8rem; }
+            .wedding-date-banner { font-size: 0.95rem; padding: 10px 18px; }
+            .event-card { flex-direction: column; text-align: center; gap: 10px; }
+            .container { padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Shehnai Audio -->
+    <audio id="wedding-audio" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8230f81.mp3" type="audio/mpeg">
+    </audio>
+
+    <button class="music-btn" onclick="toggleAudio()" title="Play Shehnai Music">🎵</button>
+
+    <div class="container">
+        
+        <header>
+            <!-- Lord Ganesha Detailed Vector Illustration -->
+            <div class="ganesha-wrapper">
+                <svg viewBox="0 0 100 100" width="100%" height="100%">
+                    <path fill="#800020" d="M50,10 C53,10 55,12 55,15 C55,18 53,20 50,20 C47,20 45,18 45,15 C45,12 47,10 50,10 Z M50,22 C62,22 72,30 72,42 C72,50 68,55 62,60 C58,63 56,66 56,70 C56,74 53,78 48,78 C43,78 40,74 40,70 C40,65 44,60 48,56 C52,52 54,48 54,42 C54,34 48,28 40,28 C36,28 32,30 30,34 L24,30 C28,24 38,22 50,22 Z M50,32 C54,32 58,35 58,40 C58,45 54,48 50,48 C46,48 42,45 42,40 C42,35 46,32 50,32 Z"/>
+                    <circle cx="50" cy="15" r="3" fill="#D4AF37"/>
+                    <path fill="#D4AF37" d="M50,2 C52,6 52,8 50,10 C48,8 48,6 50,2 Z"/>
+                    <path fill="#D4AF37" d="M35,35 Q50,20 65,35 Q50,28 35,35 Z"/>
+                </svg>
+            </div>
+            <div class="shlok">॥ श्री गणेशाय नमः ॥</div>
+            <p class="sub-header">Together with their families</p>
+        </header>
+
+        <!-- Main Card Section -->
+        <section class="hero">
+            <!-- Corner Mandala Decorations -->
+            <svg class="corner-mandala top-left" viewBox="0 0 100 100"><path d="M0,0 L100,0 C100,50 50,100 0,100 Z"/></svg>
+            <svg class="corner-mandala top-right" viewBox="0 0 100 100"><path d="M0,0 L100,0 C100,50 50,100 0,100 Z"/></svg>
+            <svg class="corner-mandala bottom-left" viewBox="0 0 100 100"><path d="M0,0 L100,0 C100,50 50,100 0,100 Z"/></svg>
+            <svg class="corner-mandala bottom-right" viewBox="0 0 100 100"><path d="M0,0 L100,0 C100,50 50,100 0,100 Z"/></svg>
+
+            <p class="sub-header" style="letter-spacing: 3px;">Save Our Date</p>
+            
+            <h1 class="couple-names">
+                Omkar <span class="ampersand">&amp;</span> Apeksha
+            </h1>
+
+            <div class="family-details">
+                <p><strong>Groom:</strong> Omkar Wanjale</p>
+                <p><i>Son of Smt. Sangeeta Baban Wanjale</i></p>
+                <br>
+                <p><strong>Bride:</strong> Apeksha Shitole</p>
+                <p><i>Daughter of Smt. Sunita &amp; Shri Bhaskar Pandurang Nathu Shitole</i></p>
+            </div>
+
+            <div class="wedding-date-banner">
+                Sunday, 13th December 2026
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section class="events-section">
+            <h2 class="section-title">Auspicious Ceremonies</h2>
+
+            <!-- Haldi Event Card -->
+            <div class="event-card">
+                <div class="event-icon-wrapper">
+                    <!-- Turmeric/Flower Vector Icon -->
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="#D4AF37"/></svg>
+                </div>
+                <div class="event-details">
+                    <div class="event-title">Haldi Ceremony</div>
+                    <div class="event-time">📅 Sunday, 13th December 2026 • 🕚 11:00 AM</div>
+                </div>
+            </div>
+
+            <!-- Wedding Event Card -->
+            <div class="event-card">
+                <div class="event-icon-wrapper">
+                    <!-- Kalash / Sacred Pot Vector Icon -->
+                    <svg viewBox="0 0 24 24"><path d="M12 3L4 9v12h16V9l-8-6zm0 2.25l6 4.5v9.75H6V9.75l6-4.5z" fill="#800020"/></svg>
+                </div>
+                <div class="event-details">
+                    <div class="event-title">Subh Vivah (Wedding Ceremony)</div>
+                    <div class="event-time">📅 Sunday, 13th December 2026 • 🕕 06:00 PM</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Venue Section -->
+        <section class="venue-section">
+            <h2 class="section-title">Wedding Venue</h2>
+            
+            <div class="venue-card">
+                <div class="venue-name">Kapila Resort</div>
+                <div class="venue-address">
+                    Dhole Patil College of Engineering, Vitthal Nagar,<br>
+                    Kharadi, Pune, Maharashtra
+                </div>
+                <a href="https://maps.google.com/?q=Kapila+Resort+Kharadi+Pune" target="_blank" class="btn-map">
+                    <span>📍</span> Open Directions on Google Maps
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <div class="invitation-by">
+                With Compliments &amp; Warm Regards:<br>
+                <strong>Wanjale Family</strong>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Interactive Scripts: Falling Petals & Music Toggle -->
+    <script>
+        // Falling Marigold Petal Animation Generator
+        function createPetals() {
+            const petalCount = 12;
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.animationDuration = (Math.random() * 5 + 5) + 's';
+                petal.style.width = (Math.random() * 8 + 10) + 'px';
+                petal.style.height = (Math.random() * 12 + 12) + 'px';
+                petal.style.animationDelay = (Math.random() * 5) + 's';
+                document.body.appendChild(petal);
+            }
+        }
+        createPetals();
+
+        // Audio Toggle Script
+        function toggleAudio() {
+            const audio = document.getElementById("wedding-audio");
+            const btn = document.querySelector(".music-btn");
+            if (audio.paused) {
+                audio.play();
+                btn.innerHTML = "⏸️";
+            } else {
+                audio.pause();
+                btn.innerHTML = "🎵";
+            }
+        }
+    </script>
+
+</body>
+</html>
